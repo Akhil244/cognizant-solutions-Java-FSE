@@ -1,0 +1,191 @@
+/* styles.css - Enhanced Stylesheet for Community Portal */
+
+/* --- Google Fonts & Variables --- */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@700&display=swap');
+
+:root {
+    --primary-color: #007BFF;
+    --secondary-color: #6C757D;
+    --background-color: #f8f9fa;
+    --header-gradient: linear-gradient(to right, #00529B, #007BFF); /* */
+    --card-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    --hover-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* --- General & Body Styles --- */
+body {
+    font-family: 'Lato', sans-serif; /* */
+    background-color: var(--background-color);
+    color: #333;
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif; /* */
+    font-weight: 700; /* */
+}
+
+h2 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #eee;
+    display: inline-block;
+}
+
+.portal-section {
+    background-color: #fff;
+    padding: 2.5rem 1.5rem;
+    border-radius: 8px; /* */
+    box-shadow: var(--card-shadow); /* */
+    transition: box-shadow 0.3s ease;
+}
+
+.portal-section:hover {
+    box-shadow: var(--hover-shadow);
+}
+
+.highlight {
+    background-color: yellow;
+    font-weight: bold;
+    padding: 2px 5px;
+    border-radius: 3px;
+}
+
+/* --- Header & Footer --- */
+.main-header {
+    background: var(--header-gradient);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.main-footer {
+    padding: 1.5rem;
+}
+
+.main-footer a i {
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.main-footer a:hover {
+    color: var(--primary-color) !important;
+}
+
+/* --- Navigation --- */
+.main-nav {
+    background-color: #343a40 !important; /* Overriding Bootstrap */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.main-nav .nav-link {
+    color: rgba(255, 255, 255, 0.8) !important;
+    margin: 0 10px;
+    transition: color 0.3s ease, transform 0.2s ease;
+    padding: 10px 15px;
+    border-radius: 4px;
+}
+
+.main-nav .nav-link:hover,
+.main-nav .nav-link.active {
+    color: #fff !important;
+    background-color: var(--primary-color);
+    transform: translateY(-2px); /* */
+}
+
+/* --- Welcome Banner --- */
+#welcomeBanner {
+    background-color: #d1ecf1; /* Lighter blue */
+    border-color: #bee5eb;
+    color: #0c5460;
+    font-weight: bold;
+}
+#welcomeBanner span {
+    color: #d9534f; /* Reddish for offer */
+    margin-left: 10px;
+}
+
+/* --- Cards --- */
+.card {
+    border: none; /* Remove default border */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--hover-shadow);
+}
+
+.card-header {
+    background-color: var(--primary-color);
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* --- Video --- */
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+    background-color: #000;
+    border-radius: 8px; /* */
+    box-shadow: var(--card-shadow);
+}
+
+.video-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* --- Image Gallery Table --- */
+.event-gallery-table {
+    background-color: #fff;
+}
+.event-gallery-table .event-image {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border: 3px solid #eee; /* */
+    padding: 3px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+.event-gallery-table .event-image:hover {
+    transform: scale(1.1);
+    border-color: var(--primary-color); /* */
+}
+.event-gallery-table p {
+    margin-top: 10px;
+    font-weight: bold;
+    color: var(--secondary-color);
+}
+
+/* --- Form --- */
+#registrationForm .form-label {
+    font-weight: bold;
+}
+
+#registrationForm button {
+    font-size: 1.1rem;
+    padding: 12px;
+}
+
+output {
+    font-size: 1.1rem;
+}
+
+/* --- Media Queries for Responsiveness --- */
+@media (max-width: 768px) {
+    .portal-section {
+        padding: 1.5rem 1rem;
+    }
+    h2 {
+        font-size: 1.8rem;
+    }
+    .event-gallery-table .event-image {
+        width: 100px;
+        height: 100px;
+    }
+}
